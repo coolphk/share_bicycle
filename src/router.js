@@ -4,6 +4,7 @@ import App from "./App";
 import Admin from "./admin";
 import Login from "./pages/login";
 import Buttons from "./pages/ui/buttons";
+import Modals from './pages/ui/modals';
 import Home from "./pages/home";
 import NoMath from "./pages/nomatch";
 
@@ -17,6 +18,7 @@ export default class Router extends React.Component {
                         <Switch>
                             <Route path={"/admin/home"} component={Home}/>
                             <Route path={"/admin/ui/buttons"} component={Buttons}/>
+                            <Route path={"/admin/ui/modals"} component={Modals}/>
                             <Route component={NoMath}/>
                         </Switch>
                     </Admin>}/>
