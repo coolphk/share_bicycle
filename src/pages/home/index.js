@@ -4,7 +4,7 @@ import './index.less'
 export default class Home extends React.Component {
     render() {
         return <div className={"home-wrap"}>
-            欢迎学习慕课后台管理系统
+            欢迎学习后台管理系统
         </div>
     }
 }

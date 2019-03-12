@@ -1,5 +1,5 @@
 import React from 'react';
-import {HashRouter, Route, Switch} from 'react-router-dom';
+import {HashRouter, Redirect, Route, Switch} from 'react-router-dom';
 import App from "./App";
 import Admin from "./admin";
 import Login from "./pages/login";
@@ -13,6 +13,7 @@ export default class Router extends React.Component {
         return (
             <HashRouter>
                 <App>
+                    <Redirect exact path={"/"} to="/admin/home" />
                     <Route path={"/login"} component={Login}/>
                     <Route path={"/admin"} render={() => <Admin>
                         <Switch>
