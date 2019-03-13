@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import {Tabs, Card, Icon} from "antd";
+import {Tabs, Card, Icon, message} from "antd";
 
 const TabPane = Tabs.TabPane;
 
 class Tab extends Component {
     handleCallback = (key) => {
-        console.log(key)
+        message.info(`你选中的第${key}个标签！`);
     };
 
     componentWillMount() {
@@ -43,7 +43,11 @@ class Tab extends Component {
                     </Tabs>
                 </Card>
                 <Card title={"动态Tab页签"}>
-                    <Tabs onTabClick={this.handleCallback}>
+                    <Tabs
+                        defaultActiveKey={1}
+                        onTabClick={this.handleCallback}
+                        type={"editable-card"}
+                    >
                         {
                             this.state.panes.map(panel => {
                                 return <TabPane tab={panel.title} key={panel.key}>
