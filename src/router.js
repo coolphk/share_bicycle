@@ -16,11 +16,11 @@ export default class Router extends React.Component {
             <HashRouter>
                 <App>
                     <Route exact path="/" render={() =>
-                        <Redirect to="/admin"/>
+                        <Redirect to="/admin/home"/>
                     }/>
 
                     <Route path={"/login"} component={Login}/>
-                    <Route path={"/admin"} render={() =>
+                    <Route path={"/admin"} render={() => (
                         <Admin>
                             <Switch>
                                 <Route path={"/admin/home"} component={Home}/>
@@ -31,7 +31,7 @@ export default class Router extends React.Component {
                                 <Route component={NoMath}/>
                             </Switch>
                         </Admin>
-                    }/>
+                    )}/>
                 </App>
             </HashRouter>
         )
