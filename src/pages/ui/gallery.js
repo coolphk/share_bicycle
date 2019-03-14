@@ -1,40 +1,39 @@
 import React, {Component} from 'react';
-import {Card, Col, Row} from "antd"
-
+import {Card, Col, Row} from "antd";
 
 class Gallery extends Component {
     render() {
-        const imgs = [];
-        for (var i = 0; i <= 20; i += 5) {
-            var arr = [];
-            for (var j = 1; j <= 5; j++) {
-                arr.push(i + j + ".png")
-            }
-            imgs.push(arr);
-        }
-        // const imgList = imgs.map(list => list.map(item =>
-        //     <Card cover={<img src={"/gallery" + item}/>}>
-        //         <Card.Meta
-        //             title={"ReactAdmin"}
-        //             description={item}
-        //         />
-        //     </Card>
-        // ))
+        const imgs = [
+            ['1.png', '2.png', '3.png', '4.png', '5.png'],
+            ['6.png', '7.png', '8.png', '9.png', '10.png'],
+            ['11.png', '12.png', '13.png', '14.png', '15.png'],
+            ['16.png', '17.png', '18.png', '19.png', '20.png'],
+            ['21.png', '22.png', '23.png', '24.png', '25.png']
+        ];
+        const imgList = imgs.map(list =>list.map(item =>
+            <Card
+                cover={<img src={'/gallery/' + item} />} key={item}>
+                <Card.Meta title={"React"} description={item}/>
+            </Card>
+        ));
         return (
             <div>
-                <Row>
-                    {
-                        imgs.map((list, index) => list.map((item, index) =>
-                            <Col md={4} key={index}>
-                                <Card key={item} cover={<img src={"/gallery/" + item}/>}>
-                                    <Card.Meta
-                                        title={"ReactAdmin"}
-                                        description={item}
-                                    />
-                                </Card>
-                            </Col>
-                        ))
-                    }
+                <Row gutter={10}>
+                    <Col md={5}>
+                        {imgList[0]}
+                    </Col>
+                    <Col md={5}>
+                        {imgList[1]}
+                    </Col>
+                    <Col md={5}>
+                        {imgList[2]}
+                    </Col>
+                    <Col md={5}>
+                        {imgList[3]}
+                    </Col>
+                    <Col md={4}>
+                        {imgList[4]}
+                    </Col>
                 </Row>
             </div>
         );
