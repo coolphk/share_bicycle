@@ -13,7 +13,7 @@ class Carousels extends Component {
                     </Carousel>
 
                 </Card>
-                <Card title={"图片背景轮播"}>
+                <Card title={"图片背景轮播"} className={"slider-wrap"}>
                     <Carousel autoplay={true} autoplaySpeed={2000} effect={"fade"}>
                         <div><img src='/carousel-img/carousel-1.jpg' alt=''/></div>
                         <div><img src='/carousel-img/carousel-2.jpg' alt=''/></div>
